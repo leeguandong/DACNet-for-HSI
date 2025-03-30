@@ -18,9 +18,7 @@ from src import (
     DGCdenseNet,
     DydenseNet,
     LgcdenseNet,
-    Densenet_Unet3D,
     CodenseNet,
-    DsdenseNet,
     load_dataset, sampling, generate_iter, aa_and_each_accuracy, record_output, generate_png)
 from src.trainer import train
 
@@ -31,9 +29,8 @@ net_list = {
     'dydenseNet': DydenseNet,
     'dgcnet': DGCdenseNet,
     'lgcdenseNet': LgcdenseNet,
-    "densenet_unet3d": Densenet_Unet3D,
     "codensenet": CodenseNet,
-    "dsdensenet": DsdenseNet}
+    }
 
 
 def parse_args():
@@ -41,7 +38,7 @@ def parse_args():
     parser.add_argument("--dataset", type=str, default="KSC",
                         choices=["Indian", "PaviaU", "Pavia", "KSC", "Botswana", "Salinas"])
     parser.add_argument("--model", type=str, default="dydenseNet",
-                        choices=['dydenseNet', 'dgcnet', "densenet_unet3d", "lgcnet", "codensenet", "dsdensenet"])
+                        choices=['dydenseNet', 'dgcnet', "lgcnet", "codensenet", ])
 
     parser.add_argument("--iter", type=int, default=1)
     parser.add_argument("--path_length", type=int, default=5)
