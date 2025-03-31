@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("/home/gdli7/common/HyperspectralCls_Factory/")
-
 import os
 import argparse
 import collections
@@ -29,8 +25,7 @@ net_list = {
     'dydenseNet': DydenseNet,
     'dgcnet': DGCdenseNet,
     'lgcdenseNet': LgcdenseNet,
-    "codensenet": CodenseNet,
-    }
+    "codensenet": CodenseNet}
 
 
 def parse_args():
@@ -47,7 +42,7 @@ def parse_args():
     parser.add_argument("--lr", type=float, default=0.0005)
     parser.add_argument("--batch_size", type=int, default=80)
 
-    parser.add_argument("--saved", type=str, default='/home/gdli7/common/HyperspectralCls_Factory/results/small')
+    parser.add_argument("--saved", type=str, default='results/small')
 
     args = parser.parse_args()
     return args
